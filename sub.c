@@ -10,6 +10,11 @@ void encrypt(char* plaintxt,int key,char* ciphertxt){
             int index=(plaintxt[i]-base+key)%26;
             ciphertxt[i]=base+index;
         }
+        else if (isdigit(plaintxt[i])){
+            char base='0';
+            int index=(plaintxt[i]-base+key+10)%10;
+            ciphertxt[i]=base+index;
+        }
         else{
             //printf("Invalid character.");
             ciphertxt[i]=plaintxt[i];
@@ -23,6 +28,11 @@ void decrypt(char* ciphertxt,int key,char* decodedtxt){
         if (isalpha(ciphertxt[i])){
             char base=isupper(ciphertxt[i]) ? 'A':'a';
             int index=(ciphertxt[i]-base-key+26)%26;
+            decodedtxt[i]=base+index;
+        }
+        else if (isdigit(ciphertxt[i])){
+            char base='0';
+            int index=(ciphertxt[i]-base-key+10)%10;
             decodedtxt[i]=base+index;
         }
         else{
