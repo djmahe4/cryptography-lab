@@ -25,7 +25,7 @@ float detSub(float mat[3][3],int mi, int mj){
     return new[0][0]*new[1][1]-new[1][0]*new[0][1];
 }
 int main(){
-    int n, mod=26;
+    int n;
     printf("Enter order of the matrix:");
     scanf("%d",&n);
     if(n!=2 && n!=3){
