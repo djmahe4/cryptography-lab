@@ -19,11 +19,13 @@ class DES{
 			
 			byte[] textBytes=plaintext.getBytes();
 			byte[] encBytes=cipher.doFinal(textBytes);
+			
 			String encString=Base64.getEncoder().encodeToString(encBytes);
 			System.out.println("Encrypted string: "+encString);
 			
 			cipher.init(Cipher.DECRYPT_MODE,secret);
 			byte[] decBytes=cipher.doFinal(encBytes);
+			
 			String decString=new String(decBytes);
 			System.out.println("Decrypted string: "+decString);
 			
