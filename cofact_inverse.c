@@ -17,8 +17,8 @@ float detSub(float mat[3][3],int mi, int mj){
         indj=0;
         for(int j=0;j<3;j++){
             if (j==mj) continue;
-                new[indi][indj]=mat[i][j];
-                indj++;
+            new[indi][indj]=mat[i][j];
+            indj++;
         }
         indi++;
     }
