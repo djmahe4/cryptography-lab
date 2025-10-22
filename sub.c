@@ -12,7 +12,7 @@ void encrypt(char* plaintxt,int key,char* ciphertxt){
         }
         else if (isdigit(plaintxt[i])){
             char base='0';
-            int index=(plaintxt[i]-base+key+10)%10;
+            int index=(plaintxt[i]-base+key)%10;
             ciphertxt[i]=base+index;
         }
         else{
